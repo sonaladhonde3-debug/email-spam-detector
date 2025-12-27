@@ -4,7 +4,7 @@ import pickle
 import os
 
 from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
 MODEL_PATH = "model/spam_model.pkl"
@@ -50,3 +50,4 @@ if st.button("Check"):
             st.error("This email is classified as SPAM.")
         else:
             st.success("This email is NOT spam.")
+
