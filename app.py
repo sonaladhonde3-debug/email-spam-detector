@@ -10,8 +10,8 @@ from sklearn.naive_bayes import MultinomialNB
 MODEL_PATH = "model/spam_model.pkl"
 
 @st.cache_resource
-def train_and_load_model():
-    data = pd.read_csv("spam.csv")
+def train_and_load_model(): 
+    data = pd.read_csv("data/spam.csv", encoding="latin-1")
     data["v1"] = data["v1"].map({"ham": 0, "spam": 1})
 
     X = data["v2"]
@@ -50,4 +50,5 @@ if st.button("Check"):
             st.error("This email is classified as SPAM.")
         else:
             st.success("This email is NOT spam.")
+
 
